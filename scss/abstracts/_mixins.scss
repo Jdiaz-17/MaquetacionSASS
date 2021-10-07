@@ -1,0 +1,8 @@
+/// @desc: Encapsula los estilos correspondientes al botón del topmenu
+/// @param: $background-Color - Especifica el color de fondo que tomará el elemento
+/// @param: $Color - Especifica el color de la letra que tomará el elemento
+@mixin topmenu__button ($background-color,$color){
+  background-color: $background-color;
+  color: $color;
+  
+}
