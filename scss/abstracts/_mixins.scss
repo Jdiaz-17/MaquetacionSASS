@@ -1,8 +1,48 @@
 /// @desc: Encapsula los estilos correspondientes al botón del topmenu
 /// @param: $background-Color - Especifica el color de fondo que tomará el elemento
 /// @param: $Color - Especifica el color de la letra que tomará el elemento
-@mixin topmenu__button ($background-color,$color){
+@mixin button ($background-color,$color){
   background-color: $background-color;
   color: $color;
-  
+  font-family: 'Lato', sans-serif;
 }
+
+/// @desc: Encapsula la orientación correspondiente a un elemento especifico o contenedor
+/// @param: $orientation - Especifica la orientación que tomará el elemento
+@mixin orientation ($orientation) {
+  /// Posibles valores
+  /// start
+  /// end
+  /// center
+  /// around
+  /// between
+
+  display: flex;
+  @if($orientation == start or $orientation == end) {
+      justify-content: flex-#{$orientation};
+  }
+  @else if($orientation == around or $orientation == between) {
+      justify-content: space-#{$orientation};
+  }
+  @else {
+      justify-content: center;
+  }
+}
+
+/// @desc: Encapsula el colorde fondo de un contenedor
+/// @param: $background-Color - Especifica el color de fondo que tomará el elemento
+/* @mixin topmenu ($background-color) {
+  height: 1px;
+  width: 1px;
+  padding: 1px;
+  background-color: $background-color;
+} */
+
+/// @desc: Encapsula el colorde fondo de un contenedor
+/// @param: $background-Color - Especifica el color de fondo que tomará el elemento
+/* @mixin primarymenu ($background-color) {
+  height: 1px;
+  width: 1px;
+  padding: 1px;
+  background-color: $background-color;
+} */
