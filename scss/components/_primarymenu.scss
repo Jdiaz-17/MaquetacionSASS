@@ -1,3 +1,38 @@
+.primarymenu {
+  background-color: $color-primaryblack;
+  color: $color-white;
+  font-family: 'Lato', sans-serif;
+  .primarymenu__container {
+    display: flex;
+    width: 80%;
+    .primarymenu__logo {
+      width: 40%;
+      margin-left: 20%;
+      .primarymenu__logoimage {
+        width: 60%;
+      }
+    }
+    .primarymenu__item {
+      display: flex;
+      width: 60%;
+      @include orientation (end);
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      .primarymenu__itemlink {
+        @include orientation (center);
+        margin: 0px 10px;
+        font-size: $fuente-normal;
+        text-align: center;
+        align-items: center;
+        .itemlink__search {
+          width: 100%;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -5,5 +40,3 @@
 
 
 
-
-@import 'base/typography';

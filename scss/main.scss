@@ -1,5 +1,14 @@
+///abstracts
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/placeholders';
+
+///base
 @import 'base/typography';
+
+///components
 @import 'components/topmenu';
+@import 'components/primarymenu';
+
+///pages
+@import 'pages/home';

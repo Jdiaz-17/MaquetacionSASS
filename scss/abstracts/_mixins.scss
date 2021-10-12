@@ -29,20 +29,8 @@
   }
 }
 
-/// @desc: Encapsula el colorde fondo de un contenedor
+/// @desc: Encapsula los estilos correspondientes al botón del topmenu
 /// @param: $background-Color - Especifica el color de fondo que tomará el elemento
-/* @mixin topmenu ($background-color) {
-  height: 1px;
-  width: 1px;
-  padding: 1px;
-  background-color: $background-color;
-} */
+@mixin container (){
 
-/// @desc: Encapsula el colorde fondo de un contenedor
-/// @param: $background-Color - Especifica el color de fondo que tomará el elemento
-/* @mixin primarymenu ($background-color) {
-  height: 1px;
-  width: 1px;
-  padding: 1px;
-  background-color: $background-color;
-} */
+}
