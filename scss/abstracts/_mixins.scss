@@ -4,7 +4,6 @@
 @mixin button ($background-color,$color){
   background-color: $background-color;
   color: $color;
-  font-family: 'Lato', sans-serif;
 }
 
 /// @desc: Encapsula la orientación correspondiente a un elemento especifico o contenedor
@@ -30,7 +29,11 @@
 }
 
 /// @desc: Encapsula los estilos correspondientes al botón del topmenu
-/// @param: $background-Color - Especifica el color de fondo que tomará el elemento
-@mixin container (){
-
+/// @param: $color - Especifica el color de texto que tomará el elemento
+/// @param: $text-decoration - Especifica la decoración del texto tomará el elemento
+@mixin text ($color,$text-decoration){
+  color: $color;
+  text-decoration: $text-decoration;
 }
+
+

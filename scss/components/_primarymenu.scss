@@ -1,7 +1,5 @@
 .primarymenu {
   background-color: $color-primaryblack;
-  color: $color-white;
-  font-family: 'Lato', sans-serif;
   .primarymenu__container {
     display: flex;
     width: 80%;
@@ -25,9 +23,8 @@
         font-size: $fuente-normal;
         text-align: center;
         align-items: center;
-        .itemlink__search {
-          width: 100%;
-          color: $color-white;
+        & a {
+          @include text ($color-white,none);
         }
       }
     }

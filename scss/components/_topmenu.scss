@@ -1,7 +1,5 @@
 .topmenu {
   background-color: $color-alternativeblack;
-  color: $color-grey;
-  font-family: 'Lato', sans-serif;
   .topmenu__container {
     display: flex;
     width: 80%;
@@ -14,8 +12,13 @@
       width: 100%;
       .topmenu__itemlink {
         @include orientation (center);
-        margin: 0px 5px;
+        margin: 0px 10px;
         font-size: $fuente-pequena;
+        height: 25px;
+        align-items: center;
+        & a {
+          @include text ($color-grey,none);
+        }
       }
     }                                                                                                                                           
   }
