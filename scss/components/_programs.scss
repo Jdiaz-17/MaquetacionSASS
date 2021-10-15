@@ -1,0 +1,178 @@
+.programs {
+
+  .programs__header {
+    padding: 5px 0px;
+    background-color: $color-programheader;
+    & p {
+      font-style: italic;
+      font-size: $fuente-pequena;
+      margin: 0px 300px;
+      & span {
+        font-weight: bold;
+      }
+    }
+  }
+  .programs__container {
+    display: flex;
+    margin: 0 300px;
+    .filter {
+      width: 20%;
+      .filter__title {
+        margin-bottom: 30px;
+        & h2 {
+          font-size: $fuente-grande;
+          padding: 10px 0px;
+          border-bottom: 2px solid $color-yellow;
+          margin-bottom: 0px;
+        }
+        & p {
+          font-size: $fuente-pequena;
+        }
+      }
+      .filter__selectors {
+
+        .selectors {
+          list-style: none;
+          padding: 0px;
+          .selectors__info {
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid $color-grey;
+            & p:first-child {
+              font-size: $fuente-pequena;
+              padding: 5px 10px 10px;
+              margin: 0px;
+            }
+            & p:last-child {
+              font-size: $fuente-normal;
+              padding: 5px 10px 10px;
+              margin: 0px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .filter__button {
+        text-align: center;
+        .filter__buttonlink {
+          @include button ($color-yellow,$color-black);
+          width: 60%;
+          border: 2px solid $color-yellow;
+          border-radius: 5px;
+          height: 30px;
+          font-weight: bold;
+        }
+      }
+    }
+    .cards {
+      margin-left: 50px;
+      width: 80%;
+      .cards__selectors {
+        display: flex;
+        & p {
+          margin: 0px 50px;
+          padding: 35px 10px 10px;
+        }
+        & p:first-child {
+          font-weight: bold;
+          border-bottom: 2px solid $color-yellow;
+        }
+      }
+      .cards__targets {
+        width: 100%;
+        margin: 50px 0px;
+        .targets {
+          list-style: none;
+          padding: 0px;
+          width: 30%;
+          .targets__container {
+            background-color: $color-white;
+            width: 100%;
+            .targets__image {
+              width: 100%;
+              height: 170px;
+              position: relative;
+              & img:first-child {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+              }
+              & img:nth-child(2) {
+                position: absolute;
+                left: 67%;
+                top: 41%;
+                z-index: 1;
+                width: 0;
+                height: 0;
+                border-right: 50px solid $color-yellow;
+                border-top: 50px solid transparent;
+                border-left: 50px solid transparent;
+                border-bottom: 50px solid $color-yellow;
+              }
+              & img:last-child{
+                position: absolute;
+                width: 13%;
+                left: 85%;
+                top: 72%;
+                z-index: 2;
+              }
+            }
+            .targets__info {
+              margin: 0px 20px 20px;
+              .targets__title {
+                font-size: $fuente-grande;
+              }
+            }
+            .targets__information {
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              .information__icon {
+                width: 20%;
+                margin: 10px 0px;
+                align-self: center;
+              }
+              .information__text {
+                width: 80%;
+                margin: 10px 0px;
+                font-size: $fuente-pequena;
+                align-self: center;
+                & p {
+                  margin: 5px 0px;
+                }
+              }
+            }
+            .targets__button {
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+              & button {
+                width: 45%;
+                height: 35px;
+                margin: 20px 0px;
+                border: 1px none $color-yellow;
+                border-radius: 5px;
+                & a {
+                  text-decoration: none;
+                  color: $color-black;
+                  font-weight: bold;
+                }
+              }
+              & button:first-child {
+                background-color: $color-greybutton;
+              }
+              & button:last-child {
+                background-color: $color-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .programs__pagination {
+    margin: 0 300px;
+  }
+}
