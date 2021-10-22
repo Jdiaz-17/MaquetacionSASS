@@ -9,10 +9,19 @@
       width: 15%;
       padding: 45px 0px;
       .address__icon {
+        position: relative;
         & img {
           width: 60%;
           padding-bottom: 10%;
         }
+      }
+      .address__icon::before {
+        content: "";
+        background-color: $color-yellow;
+        height: 1px;
+        width: 40%;
+        top: 70px;
+        position: absolute;
       }
       .address__info {
         margin-right: 40%;
@@ -52,21 +61,31 @@
     .information__normativity {
       width: 13%;
       padding: 45px 0px 45px 20px;
-      border-left: 1px solid $color-grey;
+      border-left: 1px solid $color-greymargin;
       .normativity__title {
         padding: 10% 20% 10% 0%;
+        position: relative;
         & h4 {
           color: $color-white;
           margin: 0px;
         }
+      }
+      .normativity__title::before {
+        content: "";
+        background-color: $color-yellow;
+        height: 1px;
+        width: 40%;
+        top: -5px;
+        position: absolute;
       }
       .normativity__info {
         & ul {
           list-style: none;
           padding: 0px;
           & li {
-            color: $color-grey;
+            color: $color-greyfooter;
             font-size: $fuente-pequena;
+            cursor: pointer;
           }
         }
       }
@@ -74,21 +93,31 @@
     .information__quicklinks {
       width: 13%;
       padding: 45px 20px 45px 0px;
-      border-right: 1px solid $color-grey;
+      border-right: 1px solid $color-greymargin;
       .quicklinks__title {
         padding: 10% 20% 10% 0%;
+        position: relative;
         & h4{
           color: $color-white;
           margin: 0px;
         }
+      }
+      .quicklinks__title::before {
+        content: "";
+        background-color: $color-yellow;
+        height: 1px;
+        width: 40%;
+        top: -5px;
+        position: absolute;
       }
       .quicklinks__info {
         & ul {
           list-style: none;
           padding: 0px;
           & li {
-            color: $color-grey;
+            color: $color-greyfooter;
             font-size: $fuente-pequena;
+            cursor: pointer;
           }
         }
       }
@@ -98,11 +127,20 @@
       padding: 45px 20px;
       .socialnetworks__title {
         padding: 10% 20% 10% 0%;
+        position: relative;
         & h4 {
           color: $color-white;
           margin: 0px;
           font-size: $fuente-pequena;
         }
+      }
+      .socialnetworks__title::before {
+        content: "";
+        background-color: $color-yellow;
+        height: 1px;
+        width: 40%;
+        top: -5px;
+        position: absolute;
       }
       .socialnetworks__title::after {
         border-top: 2px solid $color-yellow;
@@ -114,6 +152,7 @@
           padding: 0px;
           display: flex;
           & li {
+            cursor: pointer;
             & img {
               width: 75%;
             }
@@ -129,14 +168,14 @@
     padding: 3% 0% 2%;
     .footer__endleft {
       & p {
-        color: $color-grey;
+        color: $color-greyfooter;
         font-size: $fuente-pequena;
       }
     }
     .footer__endright {
       margin-left: 310px;
       & p {
-        color: $color-grey;
+        color: $color-greyfooter;
         font-size: $fuente-pequena;
       }
     }
