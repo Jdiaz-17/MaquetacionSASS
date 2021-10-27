@@ -127,18 +127,6 @@
                 z-index: 0;
                 width: 100%;
               }
-              & img:nth-child(2) {
-                position: absolute;
-                left: 67%;
-                top: 41%;
-                z-index: 1;
-                width: 0;
-                height: 0;
-                border-right: 50px solid $color-yellow;
-                border-top: 50px solid transparent;
-                border-left: 50px solid transparent;
-                border-bottom: 50px solid $color-yellow;
-              }
               & img:last-child{
                 position: absolute;
                 width: 13%;

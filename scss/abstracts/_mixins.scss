@@ -36,4 +36,33 @@
   text-decoration: $text-decoration;
 }
 
+/// @desc: Encapsula el responsive con Media Query
+/// @param: @media - Especifica las medidas del elemento
+@mixin media-query($device) {
+  /// phone
+  /// tablet
+  /// desktop
+  /// desktopxl
 
+  @if ($device == phone) {
+      @media screen and (min-width: 320px) and (max-width: 650px) {
+          @content;
+      }
+  }
+  @else if ($device == tablet) {
+      @media screen and (min-width: 760px) and (max-width: 1024px) {
+          @content;
+      }
+  }
+  @else if ($device == desktop) {
+      @media screen and (min-width: 1030px) and (max-width: 1500px) {
+          @content;
+      }
+  }
+  @else if ($device == desktopxl) {
+      @media screen and (min-width: 1600px) {
+          @content;
+      }
+  }
+
+}

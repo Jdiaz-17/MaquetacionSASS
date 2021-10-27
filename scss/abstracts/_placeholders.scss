@@ -1,10 +1,28 @@
 ///Clases 
-.star--white {
-  color: $color-white;
+.triangle--celeste {
+  position: absolute;
+  left: 67%;
+  top: 41%;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-right: 50px solid $color-celeste;
+  border-top: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-bottom: 50px solid $color-celeste;
 }
 
-.triangle-celeste {
-  border-color: $color-celeste;
+.triangle--yellow {
+  position: absolute;
+  left: 67%;
+  top: 41%;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-right: 50px solid $color-yellow;
+  border-top: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-bottom: 50px solid $color-yellow;
 }
 
 ///placeholder
