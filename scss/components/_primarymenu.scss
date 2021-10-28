@@ -3,6 +3,10 @@
   .primarymenu__container {
     display: flex;
     width: 80%;
+    @include media-query (phone) {
+      display: flex;
+      width: 100%;
+    }
     .primarymenu__logo {
       width: 40%;
       margin-left: 20%;
