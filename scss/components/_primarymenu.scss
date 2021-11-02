@@ -2,43 +2,101 @@
   background-color: $color-primaryblack;
   .primarymenu__container {
     display: flex;
-    width: 80%;
+    margin: 0 auto;
+    width: 1300px;
     @include media-query (phone) {
       display: flex;
       width: 100%;
     }
-    .primarymenu__logo {
-      width: 40%;
-      margin-left: 20%;
-      .primarymenu__logoimage {
-        width: 60%;
-        padding: 0.6em;
-      }
-    }
-    .primarymenu__item {
+    .primarymenu__containeritems {
       display: flex;
-      width: 60%;
-      @include orientation (end);
-      list-style: none;
-      margin: 0px;
-      padding: 0px;
-      .primarymenu__itemlink {
-        @include orientation (center);
-        margin: 0px 10px;
-        font-size: $fuente-normal;
-        text-align: center;
-        align-items: center;
-        & a {
-          @include text ($color-white,none);
+      margin: 0 auto;
+      width: 1300px;
+      .primarymenu__logo {
+        width: 40%;
+        .primarymenu__logoimage {
+          padding: 0.6em;
+          width: 30%;
+        }
+      }
+      .primarymenu__item {
+        width: 60%;
+        @include orientation (end);
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        .primarymenu__itemlink {
+          @include orientation (center);
+          margin: 0px 10px;
+          font-size: $fuente-normal;
+          text-align: center;
+          align-items: center;
+          & a {
+            @include text ($color-white,none);
+          }
         }
       }
     }
   }
 }
 
+.primarymenu {
+  @include media-query (phone) {
+    display: none;
+  }
+}
 
-
-
-
-
-
+.primarymenu--mobile {
+  @include media-query (desktop) {
+    display: none;
+  }
+  @include media-query (desktopxl) {
+    display: none;
+  }
+  @include media-query (phone) {
+    width: 100%;
+  }
+  .primarymenu__container--mobile {
+    @include media-query (phone) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .primarymenu__logo--mobile {
+      width: 100%;
+      @include media-query (phone) {
+      }
+      &:first-child {
+        @include media-query (phone) {
+          width: 100%;
+          background-color: $color-primaryblack;
+        }
+        .primarymenu__logoimage--mobile {
+          @include media-query (phone) {
+            width: 35%;
+            padding: 10px;
+          }
+        }
+      }
+      &:last-child {
+        @include media-query (phone) {
+          display: flex;
+          width: 100%;
+          background-color: $color-alternativeblack;
+          justify-content: space-between;
+        }
+        .primarymenu__logoimage--mobile {
+          @include media-query (phone) {
+            width: 35%;
+            padding: 10px;
+          }
+          &:last-child {
+            @include media-query (phone) {
+              width: 13%;
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

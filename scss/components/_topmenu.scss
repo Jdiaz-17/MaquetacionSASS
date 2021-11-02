@@ -1,41 +1,48 @@
-.topmenu {
-  background-color: $color-alternativeblack;
-  height: 35px;
+.menu {
   @include media-query (phone) {
-    height: 20px;
+    width: 100%;
   }
-  .topmenu__container {
-    display: flex;
-    width: 80%;
-    height: 100%;
+  .topmenu {
+    background-color: $color-alternativeblack;
+    height: 35px;
     @include media-query (phone) {
-      width: 100%;
       height: 20px;
     }
-    .topmenu__item {
+    .topmenu__container {
       display: flex;
-      @include orientation (end);
-      list-style: none;
-      align-items: center;
-      margin: 0px;
-      padding: 0px;
-      width: 100%;
-      .topmenu__itemlink {
-        @include orientation (center);
-        margin: 0px 10px;
-        font-size: $fuente-pequena;
-        height: 25px;
-        align-items: center;
-        @include media-query (phone) {
-          font-size: 9px;
-        }
-        & a {
-          @include text ($color-grey,none);
-        }
+      margin: 0 auto;
+      width: 1300px;
+      height: 100%;
+      @include media-query (phone) {
+        width: 100%;
+        height: 20px;
       }
-    }                                                                                                                                           
+      .topmenu__item {
+        display: flex;
+        @include orientation (end);
+        list-style: none;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0px;
+        width: 1300px;
+        .topmenu__itemlink {
+          @include orientation (center);
+          margin: 0px 10px;
+          font-size: $fuente-pequena;
+          height: 25px;
+          align-items: center;
+          @include media-query (phone) {
+            font-size: 9px;
+          }
+          & a {
+            @include text ($color-grey,none);
+          }
+        }
+      }                                                                                                                                           
+    }
   }
 }
+
 
 
 

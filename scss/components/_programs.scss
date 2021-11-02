@@ -1,5 +1,4 @@
 .programs {
-
   .programs__header {
     padding: 0px;
     background-color: $color-programheader;
@@ -10,6 +9,9 @@
       margin: 0% 0% 0% 15%;
       padding: 0px;
       padding: 5px 0px;
+      @include media-query (phone) {
+        margin: 0px;
+      }
       & li {
         & a {
           font-style: italic;
@@ -24,9 +26,18 @@
   }
   .programs__container {
     display: flex;
-    margin: 0 300px;
+    margin: 0 auto;
+    width: 1300px;
+    @include media-query (phone) {
+      margin: 0px 20px;
+      flex-wrap: wrap;
+      width: 90%;
+    }
     .filter {
       width: 20%;
+      @include media-query (phone) {
+        width: 100%;
+      }
       .filter__title {
         margin-bottom: 30px;
         & h2 {
@@ -81,106 +92,133 @@
     .cards {
       margin-left: 50px;
       width: 80%;
-      .cards__selectors {
-        display: flex;
-        cursor: pointer;
-        & span {
-          margin: 0px 50px;
-          padding: 35px 10px 10px;
-          position: relative;
-        }
-        & span:first-child {
-          font-weight: bold;
-          border-bottom: 2px solid $color-yellow;
-        }
-        & span:first-child:before {
-          content: "";
-          width: 0px;
-          height: 0px;
-          border-left: 10px solid transparent;
-          border-right: 9px solid transparent;
-          border-top: 10px solid $color-yellow;
-          position: absolute;
-          bottom: -10px;
-          right: 70px;
-        }
-      }
-      .cards__targets {
+      @include media-query (phone) {
+        margin: 0px;
         width: 100%;
-        margin: 50px 0px;
-        .targets {
-          display: flex;
-          flex-wrap: wrap;
-          list-style: none;
-          padding: 0px;
+      }
+      .cards__container {
+        @include media-query (phone) {
           width: 100%;
-          .targets__container {
-            background-color: $color-white;
-            width: 30%;
-            margin: 1em;
-            .targets__image {
-              width: 100%;
-              height: 170px;
-              position: relative;
-              & img:first-child {
-                position: absolute;
-                z-index: 0;
+        }
+        .cards__selectors {
+          display: flex;
+          cursor: pointer;
+          & span {
+            margin: 0px 50px;
+            padding: 35px 10px 10px;
+            position: relative;
+            @include media-query (phone) {
+              margin: 10px;
+              padding: 10px;
+              text-align: center;
+            }
+          }
+          & span:first-child {
+            font-weight: bold;
+            border-bottom: 2px solid $color-yellow;
+          }
+          & span:first-child:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            border-left: 10px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 10px solid $color-yellow;
+            position: absolute;
+            bottom: -10px;
+            right: 70px;
+            @include media-query (phone) {
+              right: 65px;
+            }
+          }
+        }
+        .cards__targets {
+          width: 100%;
+          margin: 50px 0px;
+          @include media-query (phone) {
+            margin: 10px 0px;
+          }
+          .targets {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0px;
+            width: 100%;
+            @include media-query (phone) {
+              margin: 0px;
+              flex-wrap: wrap;
+            }
+            .targets__container {
+              background-color: $color-white;
+              width: 30%;
+              margin: 1em;
+              @include media-query (phone) {
                 width: 100%;
               }
-              & img:last-child{
-                position: absolute;
-                width: 13%;
-                left: 85%;
-                top: 72%;
-                z-index: 2;
-              }
-            }
-            .targets__info {
-              margin: 0px 20px 20px;
-              .targets__title {
-                font-size: $fuente-grande;
-              }
-            }
-            .targets__information {
-              display: flex;
-              flex-wrap: wrap;
-              width: 100%;
-              .information__icon {
-                width: 20%;
-                margin: 10px 0px;
-                align-self: center;
-              }
-              .information__text {
-                width: 80%;
-                margin: 10px 0px;
-                font-size: $fuente-pequena;
-                align-self: center;
-                & p {
-                  margin: 5px 0px;
+              .targets__image {
+                width: 100%;
+                height: 170px;
+                position: relative;
+                & img:first-child {
+                  position: absolute;
+                  z-index: 0;
+                  width: 100%;
+                }
+                & img:last-child{
+                  position: absolute;
+                  width: 13%;
+                  left: 85%;
+                  top: 72%;
+                  z-index: 2;
                 }
               }
-            }
-            .targets__button {
-              display: flex;
-              justify-content: space-around;
-              width: 100%;
-              & button {
-                width: 45%;
-                height: 35px;
-                margin: 20px 0px;
-                border: 1px none $color-yellow;
-                border-radius: 5px;
-                & a {
-                  text-decoration: none;
-                  color: $color-black;
-                  font-weight: bold;
+              .targets__info {
+                margin: 0px 20px 20px;
+                .targets__title {
+                  font-size: $fuente-grande;
                 }
               }
-              & button:first-child {
-                background-color: $color-greybutton;
+              .targets__information {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                .information__icon {
+                  width: 20%;
+                  margin: 10px 0px;
+                  align-self: center;
+                }
+                .information__text {
+                  width: 80%;
+                  margin: 10px 0px;
+                  font-size: $fuente-pequena;
+                  align-self: center;
+                  & p {
+                    margin: 5px 0px;
+                  }
+                }
               }
-              & button:last-child {
-                background-color: $color-yellow;
+              .targets__button {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                & button {
+                  width: 45%;
+                  height: 35px;
+                  margin: 20px 0px;
+                  border: 1px none $color-yellow;
+                  border-radius: 5px;
+                  & a {
+                    text-decoration: none;
+                    color: $color-black;
+                    font-weight: bold;
+                  }
+                }
+                & button:first-child {
+                  background-color: $color-greybutton;
+                }
+                & button:last-child {
+                  background-color: $color-yellow;
+                }
               }
             }
           }
@@ -192,15 +230,25 @@
     display: flex;
     justify-content: center;
     margin: 0px 300px 50px;
+    @include media-query (phone) {
+      margin: 0px 0px 10px;
+    }
     .pagination {
       display: flex;
       justify-content: center;
+      @include media-query (phone) {
+        margin: 3px;
+      }
       & a {
         background-color: $color-white;
         color: $color-black;
         text-decoration: none;
         padding: 8px 16px;
         margin: 2px;
+        @include media-query (phone) {
+          margin: 2px;
+          padding: 5px 10px;
+        }
       }
       & a:active {
         background-color: $color-yellow;
@@ -209,6 +257,50 @@
       & a:hover {
         background-color: $color-greybutton;
         color: $color-black;
+      }
+    }
+  }
+}
+
+.programs--mobile {
+  @include media-query (desktop) {
+    display: none;
+  }
+  @include media-query (desktopxl) {
+    display: none;
+  }
+  @include media-query (phone) {
+    width: 100%;
+    margin: 50px 0px;
+  }
+  .programs__contacts--mobile {
+    @include media-query (phone) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contacts__item--mobile {
+      @include media-query (phone) {
+        align-items: center;
+        display: flex;
+        margin: 15px;
+        border: 3px solid $color-yellow;
+        padding: 10px;
+        border-radius: 30px;
+      }
+      img {
+        @include media-query (phone) {
+          width: 25px;
+          margin: 0px 5px;
+        }
+      }
+      a {
+        @include media-query (phone) {
+          text-decoration: none;
+          color: $color-black;
+          font-weight: bold;
+          margin: 0px 5px;
+        }
       }
     }
   }
