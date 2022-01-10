@@ -68,4 +68,27 @@ Renderizar html => https://pretagteam.com/question/using-javascript-function-to-
 */
 // ---------------------------------------
 
+// Punto 1, 2 y 3
+
+const coursesByModality = function (modality) {
+  return courses.filter(function (e) {
+    return e.modality == modality;
+  });
+};
+
+console.log("Cursos virtuales", coursesByModality("Modalidad Virtual"));
+console.log(
+  "Cursos de Universidad de los Andes",
+  coursesByModality("Universidad de los Andes - Sede Centro")
+);
+
+console.log(
+  "Cursos que dependende la modalidad de la materia",
+  coursesByModality("Depende de la Modalidad de la materia que selecciones")
+);
+
+/** 
+ * Retorna un arreglo de cursos filtraddo por modalidad (Esto sirve para el item 1, 2 y 3)
+ * Mostrando por consola los cursos por modalidad(item 1, 2 y 3) 
+ */
 
