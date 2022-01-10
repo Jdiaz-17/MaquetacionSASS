@@ -176,6 +176,55 @@
               <span>Programas vigentes</span>
               <span>Programas finalizados</span>
             </div>
+
+            <!-- Modal-->
+
+            <div class="text-right pr-3">
+              <button class="btn btn-success" type="button" data-toggle="modal" data-target="#Modal1">Nuevo
+                Curso</button>
+            </div>
+
+            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel1"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="ModalLabel1">Nuevo Curso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="initModal()">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="name">Nombre de curso</label>
+                        <input id="name" name="name" type="text" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label for="modality">Modalidad</label>
+                        <select class="form-control" name="modality" id="modality">
+                          <option value="">Seleccionar modalidad</option>
+                          <option value="Modalidad Virtual">Modalidad Virtual</option>
+                          <option value="Depende de la Modalidad de la materia que selecciones">Depende de la Modalidad de la materia que selecciones</option>
+                          <option value="Universidad de los Andes - Sede Centro">Universidad de los Andes - Sede Centro</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="startdate">Inicio del curso</label>
+                        <input id="startdate" name="startdate" type="date" class="form-control">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="cerrarmodal" type="button" class="btn btn-secondary" data-dismiss="modal" onclick="initModal()">Cerrar</button>
+                    <button id="guardarmodal" type="button" class="btn btn-primary" onclick="registerCourse()">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Modal-->
+
+
             <div class="cards__targets">
               <ul class="targets">
                 <li class="targets__container">
