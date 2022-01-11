@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="main.js"></script>
 </head>
 <body>
   <header>
@@ -179,46 +178,41 @@
 
             <!-- Modal-->
 
-            <div class="text-right pr-3">
-              <button class="btn btn-success" type="button" data-toggle="modal" data-target="#Modal1">Nuevo
-                Curso</button>
+            <div class="modal__newcourse">
+              <button class="newcourse__button" type="button">Nuevo Curso</button>
             </div>
-
-            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel1"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="ModalLabel1">Nuevo Curso</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="initModal()">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="">
-                      <div class="form-group">
-                        <label for="name">Nombre de curso</label>
-                        <input id="name" name="name" type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label for="modality">Modalidad</label>
-                        <select class="form-control" name="modality" id="modality">
-                          <option value="">Seleccionar modalidad</option>
-                          <option value="Modalidad Virtual">Modalidad Virtual</option>
-                          <option value="Depende de la Modalidad de la materia que selecciones">Depende de la Modalidad de la materia que selecciones</option>
-                          <option value="Universidad de los Andes - Sede Centro">Universidad de los Andes - Sede Centro</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="startdate">Inicio del curso</label>
-                        <input id="startdate" name="startdate" type="date" class="form-control">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button id="cerrarmodal" type="button" class="btn btn-secondary" data-dismiss="modal" onclick="initModal()">Cerrar</button>
-                    <button id="guardarmodal" type="button" class="btn btn-primary" onclick="registerCourse()">Guardar</button>
-                  </div>
+            <div class="modal">
+              <div class="modal__content" role="document">
+                <div class="modal__header">
+                  <h5 class="modal__title">Nuevo Curso</h5>
+                  <button type="button" class="close" onclick="initModal()">
+                    <span aria-hidden="true"></span>
+                  </button>
+                </div>
+                <div class="modal__body">
+                  <form action="">
+                    <div class="modal__form">
+                      <label for="name">Nombre de curso</label>
+                      <input class="form__input" id="name" name="name" type="text">
+                    </div>
+                    <div class="form__content">
+                      <label for="modality">Modalidad</label>
+                      <select class="content__modality" name="modality" id="modality">
+                        <option value="">Seleccionar modalidad</option>
+                        <option value="Modalidad Virtual">Modalidad Virtual</option>
+                        <option value="Depende de la Modalidad de la materia que selecciones">Depende de la Modalidad de la materia que selecciones</option>
+                        <option value="Universidad de los Andes - Sede Centro">Universidad de los Andes - Sede Centro</option>
+                      </select>
+                    </div>
+                    <div class="form__startdate">
+                      <label for="startdate">Inicio del curso</label>
+                      <input class="form__input" id="startdate" name="startdate" type="date">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal__footer">
+                  <button class="modal__buttonclose" id="cerrarmodal" type="button" onclick="initModal()">Cerrar</button>
+                  <button class="modal__buttonsave" id="guardarmodal" type="button" onclick="registerCourse()">Guardar</button>
                 </div>
               </div>
             </div>
@@ -229,13 +223,83 @@
               <ul class="targets">
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset1.jpg" alt="">
                     <div class="image__figure triangle--celeste"><img class="" src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Visualización y Storytelling 1.0</h3>
+                    </div>
+                    <div class="targets__information">
+                      <div class="information__icon">
+                        <img src="img/calendar.svg" alt="">
+                      </div>
+                      <div class="information__text">
+                        <p>Inicio:</p>
+                        <p>24 de enero de 2022</p>
+                      </div>
+                      <div class="information__icon">
+                        <img src="img/lugar.svg" alt="">
+                      </div>
+                      <div class="information__text">
+                        <p>Depende de la Modalidad de la materia que selecciones</p>
+                      </div>
+                    </div>
+                    <div class="targets__button">
+                      <button>
+                        <a href="">Conoce más</a>
+                      </button>
+                      <button>
+                        <a href="">Registrate</a>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="targets__container">
+                  <div class="targets__image">
+                    <img src="img/Naranja.jpg" alt="">
+                    <div class="image__figure triangle--yellow"><img src="" alt=""></div>
+                    <img src="img/estrella_n1.svg" alt="">
+                  </div>
+                  <div class="targets__info">
+                    <div class="targets__title">
+                      <h3>CiberSeguridad</h3>
+                    </div>
+                    <div class="targets__information">
+                      <div class="information__icon">
+                        <img src="img/calendar.svg" alt="">
+                      </div>
+                      <div class="information__text">
+                        <p>Inicio:</p>
+                        <p>17 de noviembre del 2000</p>
+                      </div>
+                      <div class="information__icon">
+                        <img src="img/lugar.svg" alt="">
+                      </div>
+                      <div class="information__text">
+                        <p>Universidad de los Andes - Sede Centro</p>
+                      </div>
+                    </div>
+                    <div class="targets__button">
+                      <button>
+                        <a href="">Conoce más</a>
+                      </button>
+                      <button>
+                        <a href="">Registrate</a>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="targets__container">
+                  <div class="targets__image">
+                    <img src="img/Naranja.jpg" alt="">
+                    <div class="image__figure triangle--celeste"><img src="" alt=""></div>
+                    <img src="img/estrella_n1.svg" alt="">
+                  </div>
+                  <div class="targets__info">
+                    <div class="targets__title">
+                      <h3>Videojuegos con Unity</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -270,7 +334,7 @@
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Videojuegos con JS</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -305,7 +369,7 @@
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Big Data</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -319,7 +383,7 @@
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>Universidad de los Andes - Sede Centro</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -334,13 +398,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset2.jpg" alt="">
                     <div class="image__figure triangle--yellow"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Programas Básicos</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -348,13 +412,13 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>124 de enero de 2022</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>DModalidad Virtual</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -369,13 +433,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset3.jpg" alt="">
                     <div class="image__figure triangle--celeste"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Visualización y Storytelling 2.0</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -383,13 +447,13 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>24 de enero de 2022</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>Universidad de los Andes - Sede Centro</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -404,13 +468,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset4.jpg" alt="">
                     <div class="image__figure triangle--yellow"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Alternativas innovadoras de solución  a los retos del ordenamiento</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -418,7 +482,7 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>24 de enero de 2022</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
@@ -439,13 +503,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset5.jpg" alt="">
                     <div class="image__figure triangle--celeste"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>NARRATIVAS DIGITALES</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -453,13 +517,13 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>24 de enero de 2022"</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>Depende de la Modalidad de la materia que selecciones</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -474,13 +538,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset6.jpg" alt="">
                     <div class="image__figure triangle--yellow"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Programa Infantil y Juvenil de Formación Musical</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -488,13 +552,13 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>24 de enero de 2022</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>Universidad de los Andes - Sede Centro</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -509,13 +573,13 @@
                 </li>
                 <li class="targets__container">
                   <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
+                    <img src="img/asset7.jpg" alt="">
                     <div class="image__figure triangle--celeste"><img src="" alt=""></div>
                     <img src="img/estrella_n1.svg" alt="">
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Herramientas para formular proyectos inmobiliarios</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -523,7 +587,7 @@
                       </div>
                       <div class="information__text">
                         <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
+                        <p>24 de enero de 2022</p>
                       </div>
                       <div class="information__icon">
                         <img src="img/lugar.svg" alt="">
@@ -550,7 +614,7 @@
                   </div>
                   <div class="targets__info">
                     <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
+                      <h3>Bases de Datos - MySQL</h3>
                     </div>
                     <div class="targets__information">
                       <div class="information__icon">
@@ -564,77 +628,7 @@
                         <img src="img/lugar.svg" alt="">
                       </div>
                       <div class="information__text">
-                        <p>Modalidad Virtual</p>
-                      </div>
-                    </div>
-                    <div class="targets__button">
-                      <button>
-                        <a href="">Conoce más</a>
-                      </button>
-                      <button>
-                        <a href="">Registrate</a>
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li class="targets__container">
-                  <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
-                    <div class="image__figure triangle--celeste"><img src="" alt=""></div>
-                    <img src="img/estrella_n1.svg" alt="">
-                  </div>
-                  <div class="targets__info">
-                    <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
-                    </div>
-                    <div class="targets__information">
-                      <div class="information__icon">
-                        <img src="img/calendar.svg" alt="">
-                      </div>
-                      <div class="information__text">
-                        <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
-                      </div>
-                      <div class="information__icon">
-                        <img src="img/lugar.svg" alt="">
-                      </div>
-                      <div class="information__text">
-                        <p>Modalidad Virtual</p>
-                      </div>
-                    </div>
-                    <div class="targets__button">
-                      <button>
-                        <a href="">Conoce más</a>
-                      </button>
-                      <button>
-                        <a href="">Registrate</a>
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li class="targets__container">
-                  <div class="targets__image">
-                    <img src="img/Naranja.jpg" alt="">
-                    <div class="image__figure triangle--yellow"><img src="" alt=""></div>
-                    <img src="img/estrella_n1.svg" alt="">
-                  </div>
-                  <div class="targets__info">
-                    <div class="targets__title">
-                      <h3>Titulo de la Card</h3>
-                    </div>
-                    <div class="targets__information">
-                      <div class="information__icon">
-                        <img src="img/calendar.svg" alt="">
-                      </div>
-                      <div class="information__text">
-                        <p>Inicio:</p>
-                        <p>17 de noviembre del 2000</p>
-                      </div>
-                      <div class="information__icon">
-                        <img src="img/lugar.svg" alt="">
-                      </div>
-                      <div class="information__text">
-                        <p>Modalidad Virtual</p>
+                        <p>Depende de la Modalidad de la materia que selecciones</p>
                       </div>
                     </div>
                     <div class="targets__button">
@@ -987,14 +981,5 @@
       </div>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-    crossorigin="anonymous"></script>
-  <script src="./data.js"></script>
 </body>
 </html>

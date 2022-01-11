@@ -70,25 +70,90 @@ Renderizar html => https://pretagteam.com/question/using-javascript-function-to-
 
 // Punto 1, 2 y 3
 
-const coursesByModality = function (modality) {
-  return courses.filter(function (e) {
+const coursesmodality = function (modality) {
+  return courses.filter (function (e) {
     return e.modality == modality;
   });
 };
 
-console.log("Cursos virtuales", coursesByModality("Modalidad Virtual"));
-console.log(
-  "Cursos de Universidad de los Andes",
-  coursesByModality("Universidad de los Andes - Sede Centro")
+console.log ("Cursos virtuales", coursesmodality ("Modalidad Virtual"));
+console.log ("Cursos de Universidad de los Andes",
+  coursesmodality ("Universidad de los Andes - Sede Centro")
 );
 
 console.log(
   "Cursos que dependende la modalidad de la materia",
-  coursesByModality("Depende de la Modalidad de la materia que selecciones")
+  coursesmodality ("Depende de la Modalidad de la materia que selecciones")
 );
 
 /** 
- * Retorna un arreglo de cursos filtraddo por modalidad (Esto sirve para el item 1, 2 y 3)
- * Mostrando por consola los cursos por modalidad(item 1, 2 y 3) 
+ * Retorna un conjunto de cursos filtraddo por modalidad 
+ * Mostrando por consola los cursos por modalidad
  */
 
+
+// Punto 5 
+
+const initModal = function () {
+  document.getElementById("name").value = "";
+  document.getElementById("modality").value = "";
+  document.getElementById("startdate").value = "";
+};
+
+const registerCourse = function () {
+  const _name = document.getElementById("name").value;
+  const _modality = document.getElementById("modality").value;
+  const _startdate = document.getElementById("startdate").value;
+
+  if (_name && _modality && _startdate) {
+    console.log(_startdate);
+    const date = new Date(_startdate);
+    const nameMonth = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "sgosto",
+      "setiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ];
+
+    courses.push({
+      name: _name,
+      startdate:
+        date.getDate() +
+        " de " +
+        nameMonth[date.getMonth()] +
+        " de " +
+        date.getFullYear(),
+      banner: "assets/asset1.jpg",
+      modality: _modality,
+    });
+
+    document.getElementById("cerrarmodal").click();
+    alert("Curso registrado");
+
+    updateContent();
+    initModal();
+  } else {
+    alert("Completa la información del formulario");
+  }
+};
+
+console.log("Todos Cursos", filterCourses(""));
+
+updateContent();
+
+/** 
+ * inicializa el formulario del modal 
+ * Valida la información del modal y agrega el curso al arreglo courses
+ * obteniendo la información del formulario
+ * agregando el curso
+ * mostrando por consola todos los cursos
+ * mostrando todos los cursos en el catálogo
+ */
